@@ -1,0 +1,25 @@
+#include <stdio.h>
+#define N_ELEMENTS 5
+
+int main(void) {
+    char array[N_ELEMENTS] = {'h', 'e', 'l', 'l', 'o'};
+
+main_i_init:
+    int i = 0;
+main_i_cond:
+    if (i >= N_ELEMENTS) goto main_i_false;
+
+    putchar(array[i]); // Base address + i * sizeof element
+    putchar('\n');
+main_i_step:
+    i++;
+    goto main_i_cond;
+main_i_false:
+
+    return 0;
+}
+
+
+// What if we had
+// int array[N_ELEMENTS] = {3, 1, 4, 1, 5};
+
